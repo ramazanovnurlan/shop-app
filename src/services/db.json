@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "productName": "iPhone 12 128GB 5G Green",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "760",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/0/1/01_175_98_2.jpg",
+      "id": "1"
+    },
+    {
+      "productName": "Realme GT Master 5G Dual RMX3363 6GB/128GB 4G LTE",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "525",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/2/0/20210921160335_realme_gt_master_edition_128gb_cosmos_black.jpeg",
+      "id": "2"
+    },
+    {
+      "productName": "Samsung Galaxy Z Flip3 5G SM-F711B 8GB/256GB 4G LTE",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "980",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/7/1/71u8mxabe3l._ac_sl1500__1.jpg",
+      "id": "3"
+    },
+    {
+      "productName": "Realme X50 Pro 5G Dual RMX2075 8GB/128GB 4G LTE",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "430",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/0/1/01_170_86.jpg",
+      "id": "4"
+    },
+    {
+      "productName": "Samsung Galaxy Note20 Ultra 5G Dual SM-N986B/DS 12GB/512GB",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "1120",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/0/1/01_170_181_1.jpg",
+      "id": "5"
+    },
+    {
+      "productName": "iPhone 12 256GB 5G Blue",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "1000",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/0/1/01_173_129_2.jpg",
+      "id": "6"
+    },
+
+    {
+      "productName": "Samsung Galaxy A32 Dual SIM SM-A325F/DS 6GB/128GB 4G",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "300",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/8/1/81pycbwlx_l._ac_sl1500_.jpg",
+      "id": "7"
+    },
+    {
+      "productName": "iPhone 11 64GB Yellow",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "600",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/7/1/71z8c1zrgal._ac_sl1500_.jpg",
+      "id": "8"
+    },
+    {
+      "productName": "Xiaomi Redmi Note 10S Dual M2101K7BG 6GB/128GB 4G LTE",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, illo",
+      "price": "200",
+      "mainImageUrl": "https://cdn2.fromae.com/media/catalog/product/cache/small_image/270x270/9df78eab33525d08d6e5fb8d27136e95/n/4/n47081424a_1_1.jpg",
+      "id": "9"
+    }
+  ]
+}

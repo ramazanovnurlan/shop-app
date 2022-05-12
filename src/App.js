@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import "./App.css";
+import "../src/assets/scss/style.css";
+import Shop from "./containers/shop/Shop";
+import Detail from "./containers/detail/Detail";
+import Favorites from "./containers/favorites/Favorites";
+import Cart from "./containers/cart/Cart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/shop" />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/products/:productId" element={<Detail />} />
+
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/cart" element={<Cart />} />
+
+        {/* <Route path="/admin/listProducts" element={<ListProducts />} />
+        <Route path="/admin/addProduct" element={<AddProduct />} />
+        <Route path="/admin/editProduct/:productId" element={<EditProduct />} /> */}
+        <Route>Not Found</Route>
+      </Routes>
+    </>
   );
 }
 
