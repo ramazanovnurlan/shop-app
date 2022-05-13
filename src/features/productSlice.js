@@ -23,7 +23,6 @@ export const productSlice = createSlice({
   name: "product",
   initialState: {
     productList: [],
-    productCount: 0,
     product: {},
     isLoading: false,
     error: null,
@@ -36,7 +35,6 @@ export const productSlice = createSlice({
     },
     [getAllProductsAsync.fulfilled]: (state, action) => {
       state.productList = action.payload;
-      state.productCount = action.payload.length;
       state.isLoading = false;
     },
     [getAllProductsAsync.rejected]: (state, action) => {

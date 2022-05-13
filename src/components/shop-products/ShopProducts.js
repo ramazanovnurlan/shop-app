@@ -5,7 +5,6 @@ import { getAllProductsAsync } from "../../features/productSlice";
 
 const ShopProducts = () => {
   const getProducts = useSelector((state) => state.products.productList);
-  const productCount = useSelector((state) => state.products.productCount);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +16,7 @@ const ShopProducts = () => {
       <div className="product-items">
         <div className="search-result-container">
           <div className="search-result-title">
-            <h4>{productCount} products listed</h4>
+            <h4>{getProducts.length} products listed</h4>
           </div>
         </div>
 
@@ -52,7 +51,6 @@ const ShopProducts = () => {
                 </div>
               </div>
             </Link>
-            
           </div>
         ))}
       </div>

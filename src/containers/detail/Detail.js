@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/navbar/Navbar";
 import { getProductAsync } from "../../features/productSlice";
 import { addToCart } from "../../features/cartSlice";
-import { AiFillHeart } from "react-icons/ai";
+// import { AiOutlineHeart } from "react-icons/ai";
+import { BsSuitHeart } from "react-icons/bs";
 import {  addToFavorites } from "../../features/favoritesSlice";
 
 const Detail = () => {
@@ -54,7 +55,8 @@ const Detail = () => {
                   className="btn-favorites"
                   onClick={() => dispatch(addToFavorites(getProduct))}
                 >
-                  <AiFillHeart />
+                  {/* <AiOutlineHeart /> */}
+                  <BsSuitHeart />
                 </button>
               </div>
 

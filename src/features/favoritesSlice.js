@@ -5,7 +5,6 @@ const initialState = {
   favoritesItems: localStorage.getItem("favoritesItems")
     ? JSON.parse(localStorage.getItem("favoritesItems"))
     : [],
-  favoritesItemsCount: 0,
 };
 
 export const favoritesSlice = createSlice({
@@ -37,12 +36,29 @@ export const favoritesSlice = createSlice({
         JSON.stringify(state.favoritesItems)
       );
     },
-    // removeProductToCart(state,payload):{
+    removeFromFavorites(state, action) {
+      state.favoritesItems.map((favoritesItem) => {
+        if (favoritesItem.id === action.payload.id) {
+          const nextfavoritesItems = state.favoritesItems.filter(
+            (item) => item.id !== favoritesItem.id
+          );
 
-    // },
+          state.favoritesItems = nextfavoritesItems;
+
+          toast.error("Product removed from Favorites", {
+            position: "bottom-left",
+          });
+        }
+        localStorage.setItem(
+          "favoritesItems",
+          JSON.stringify(state.favoritesItems)
+        );
+        return state;
+      });
+    },
   },
 });
 
-export const { addToFavorites } = favoritesSlice.actions;
+export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

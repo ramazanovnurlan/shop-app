@@ -10,43 +10,25 @@ const Filter = () => {
 
           <div id="" className="aside-content">
             <label className="main">
-              GeeksforGeeks
+              Apple
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Samsung
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Xiaomi
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
-              <input type="checkbox" />
-              <span className="newCheckbox"></span>
-            </label>
-
-            <label className="main">
-              GeeksforGeeks
-              <input type="checkbox" />
-              <span className="newCheckbox"></span>
-            </label>
-
-            <label className="main">
-              GeeksforGeeks
-              <input type="checkbox" />
-              <span className="newCheckbox"></span>
-            </label>
-
-            <label className="main">
-              GeeksforGeeks
+              Realme
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
@@ -60,43 +42,49 @@ const Filter = () => {
 
           <div id="" className="aside-content">
             <label className="main">
-              GeeksforGeeks
+              Black
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Red
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Yellow
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Green
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              White
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Purple
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
 
             <label className="main">
-              GeeksforGeeks
+              Blue
+              <input type="checkbox" />
+              <span className="newCheckbox"></span>
+            </label>
+
+            <label className="main">
+              Orange
               <input type="checkbox" />
               <span className="newCheckbox"></span>
             </label>
