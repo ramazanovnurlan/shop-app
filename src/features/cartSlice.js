@@ -17,64 +17,76 @@ const cartSlice = createSlice({
       const existingIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
+      const cartItem = state.cartItems.find((x) => x.id === action.payload.id);
 
-      if (existingIndex >= 0) {
-        state.cartItems[existingIndex] = {
-          ...state.cartItems[existingIndex],
-          cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
-        };
-        toast.info("Increased product quantity", {
-          position: "bottom-left",
-        });
+      if (action.payload && !cartItem) {
+        if (existingIndex >= 0) {
+          state.cartItems[existingIndex] = {
+            ...state.cartItems[existingIndex],
+            cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
+          };
+        } else {
+          let tempProductItem = { ...action.payload, cartQuantity: 1 };
+          state.cartItems.push(tempProductItem);
+          toast.success("The product was added to the card", {
+            position: "bottom-left",
+            theme: "dark",
+            autoClose: 1000,
+            pauseOnHover: false,
+            hideProgressBar: true,
+          });
+        }
       } else {
-        let tempProductItem = { ...action.payload, cartQuantity: 1 };
-        state.cartItems.push(tempProductItem);
-        toast.success("Product added to cart", {
+        // alert("This product is already on the card");
+        toast.info("This product is already on the card", {
           position: "bottom-left",
+          theme: "dark",
+          autoClose: 1000,
+          pauseOnHover: false,
+          hideProgressBar: true,
         });
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
-    decreaseCart(state, action) {
+    decreaseProduct(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
 
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1;
-
-        toast.info("Decreased product quantity", {
-          position: "bottom-left",
-        });
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
-        const nextCartItems = state.cartItems.filter(
+        state.cartItems = state.cartItems.filter(
           (item) => item.id !== action.payload.id
         );
-
-        state.cartItems = nextCartItems;
-
-        toast.error("Product removed from cart", {
-          position: "bottom-left",
-        });
       }
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+    increaseProduct(state, action) {
+      const existingIndex = state.cartItems.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existingIndex >= 0) {
+        state.cartItems[existingIndex] = {
+          ...state.cartItems[existingIndex],
+          cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
+        };
+      } else {
+        let tempProductItem = { ...action.payload, cartQuantity: 1 };
+        state.cartItems.push(tempProductItem);
+      }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+    },
     removeFromCart(state, action) {
-      state.cartItems.map((cartItem) => {
+      state.cartItems.forEach((cartItem) => {
         if (cartItem.id === action.payload.id) {
-          const nextCartItems = state.cartItems.filter(
+          state.cartItems = state.cartItems.filter(
             (item) => item.id !== cartItem.id
           );
-
-          state.cartItems = nextCartItems;
-
-          toast.error("Product removed from cart", {
-            position: "bottom-left",
-          });
         }
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-        return state;
       });
     },
     getTotals(state, action) {
@@ -100,12 +112,17 @@ const cartSlice = createSlice({
     clearCart(state, action) {
       state.cartItems = [];
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      toast.error("Cart cleared", { position: "bottom-left" });
     },
   },
 });
 
-export const { addToCart, decreaseCart, removeFromCart, getTotals, clearCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  decreaseProduct,
+  increaseProduct,
+  removeFromCart,
+  getTotals,
+  clearCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,89 +1,119 @@
 .product-favorites-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     margin: 0 2%;
-    padding: 1rem 4rem;
+    margin-top: 1em;
+    padding: 1em;
+    position: relative;
 
-    h2 {
-        font-weight: 400;
-        font-size: 30px;
-        justify-content: center;
+    h1 {
         text-align: center;
+        margin-bottom: 1.5em;
     }
 
     .favorites-empty {
-        font-size: 20px;
-        color: rgb(84, 84, 84);
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        flex-direction: column;
+        color: gray;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            color: gray;
+
+            span {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    .search-result-container {
+
+        .search-result-title {
+            position: absolute;
+            top: 70px;
+            margin-left: 1em;
+            color: black;
+        }
+
+        // .search-result-filter {
+        //     position: absolute;
+        //     top: 0;
+        //     right: 1em;
+        // }
     }
 
     .product-items {
-
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        // display: flex;
+        // justify-content: flex-start;
+        // flex-wrap: wrap;
         box-sizing: border-box;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
         margin-top: 4em;
-
-        .search-result-container {
-
-            .search-result-title {
-                position: absolute;
-                top: -4em;
-                margin-left: 1em;
-                color: black;
-            }
-
-            // .search-result-filter {
-            //     position: absolute;
-            //     top: 0;
-            //     right: 1em;
-            // }
-        }
-
 
         .product {
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             margin: 0 1em 1em 1em;
-            padding: 0.7em;
+            padding: 0.7em 0.5em 0.7em 0.5em;
             color: black;
-            // padding-right: 2rem;
 
             span {
-                top: 0;
-                right: 0;
+                float: right;
+                // font-weight: 600;
                 cursor: pointer;
+
+                &:hover {
+                    color: red;
+                }
             }
 
             .product-content {
                 .product-img {
 
-                    // img {
-                    //     width: 250px;
-                    //     height: 320px;
-                    // }
                     img {
-                        width: 300px;
-                        height: 300px;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
 
             .product-info {
                 .text-overflow {
-                    width: 230px;
+                    width: 100%;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
+
+                .product-price {
+                    float: left;
+                    margin-bottom: 10px;
+
+                }
             }
 
             .product-buttons {
-                margin-top: 10px;
+
+                .btn-cart {
+                    width: 100%;
+                    height: 35px;
+                    background-color: black;
+                    // background-color: #254E5EFF;
+                    // background-color: #254E5EFF;
+                    // background-color: #62775EFF;
+                    color: white;
+                    text-transform: uppercase;
+                    border: none;
+                    // font-size: ;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
             }
 
             &:hover {

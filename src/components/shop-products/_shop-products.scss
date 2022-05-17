@@ -62,6 +62,23 @@
 
             .product-buttons {
                 margin-top: 10px;
+
+                .btn-cart {
+                    width: 300px;
+                    height: 35px;
+                    background-color: black;
+                    // background-color: #254E5EFF;
+                    // background-color: #254E5EFF;
+                    // background-color: #62775EFF;
+                    color: white;
+                    text-transform: uppercase;
+                    border: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
             }
 
             &:hover {

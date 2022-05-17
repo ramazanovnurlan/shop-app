@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/navbar/Navbar";
 import { getProductAsync } from "../../features/productSlice";
 import { addToCart } from "../../features/cartSlice";
-// import { AiOutlineHeart } from "react-icons/ai";
 import { BsSuitHeart } from "react-icons/bs";
 import {  addToFavorites } from "../../features/favoritesSlice";
 

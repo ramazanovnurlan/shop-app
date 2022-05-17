@@ -21,10 +21,16 @@
         //     background-color: blue;
         //     text-align: center;
 
-        //     .header-logo {
-        //         font-size: 1.4em;
-        //         color: black;
-        //     }
+        .nav__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 120px;
+            }
+        }
+
         // }
 
         // &__center {
@@ -67,7 +73,7 @@
                 .nav__cart {
                     position: relative;
 
-                    span {
+                    .cart-item-count-container {
                         position: absolute;
                         top: 0;
                         right: 4px;

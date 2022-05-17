@@ -7,53 +7,50 @@ const initialState = {
     : [],
 };
 
-export const favoritesSlice = createSlice({
+const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
     addToFavorites(state, action) {
-      const existingIndex = state.favoritesItems.findIndex(
-        (item) => item.id === action.payload.id
+      const favoritesItem = state.favoritesItems.find(
+        (x) => x.id === action.payload.id
       );
 
-      if (existingIndex >= 0) {
-        state.favoritesItems[existingIndex] = {
-          ...state.favoritesItems[existingIndex],
-          cartQuantity: state.favoritesItems[existingIndex].cartQuantity + 1,
-        };
-        toast.info("Increased product quantity", {
+      if (action.payload && !favoritesItem) {
+        state.favoritesItems.push(action.payload);
+        localStorage.setItem(
+          "favoritesItems",
+          JSON.stringify(state.favoritesItems)
+        );
+        toast.success("The product was added to the favorites", {
           position: "bottom-left",
+          theme: "dark",
+          autoClose: 1000,
+          pauseOnHover: false,
+          hideProgressBar: true,
         });
       } else {
-        let tempProductItem = { ...action.payload, cartQuantity: 1 };
-        state.favoritesItems.push(tempProductItem);
-        toast.success("Product added to Favorites", {
+        // alert("This product is already on the favorites");
+        toast.info("This product is already on the favorites", {
           position: "bottom-left",
+          theme: "dark",
+          autoClose: 1000,
+          pauseOnHover: false,
+          hideProgressBar: true,
         });
       }
-      localStorage.setItem(
-        "favoritesItems",
-        JSON.stringify(state.favoritesItems)
-      );
     },
     removeFromFavorites(state, action) {
-      state.favoritesItems.map((favoritesItem) => {
+      state.favoritesItems.forEach((favoritesItem) => {
         if (favoritesItem.id === action.payload.id) {
-          const nextfavoritesItems = state.favoritesItems.filter(
+          state.favoritesItems = state.favoritesItems.filter(
             (item) => item.id !== favoritesItem.id
           );
-
-          state.favoritesItems = nextfavoritesItems;
-
-          toast.error("Product removed from Favorites", {
-            position: "bottom-left",
-          });
         }
         localStorage.setItem(
           "favoritesItems",
           JSON.stringify(state.favoritesItems)
         );
-        return state;
       });
     },
   },
